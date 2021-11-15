@@ -12,7 +12,7 @@
 #include <vector>
 #include <windows.h>
 #include <ctime>
-#include <time.h>
+#include <math.h>
 
 #include "Array.h"
 #include "Stats.h"
@@ -38,6 +38,17 @@ struct EmployeesPay {
 };
 const int MAXSIZE = 100;
 //EXERCISE 2 STRUCTURE
+
+//EXERCISE 7 STRUCTURE
+struct Prime {
+    int prime;
+    int power;
+};
+struct Primes {
+    int nPrimes;
+    Prime* prime;
+};
+//EXERCISE 7 STRUCTURE
 
 //EXERCISE 4
 const int MAXSIZE4 = 4;
@@ -93,6 +104,11 @@ int menuExercise6();
 
 //EXERCISE 7
 void main7();
+int menuExercise7();
+void primeFactors(int n);
+Primes factor(int, int*); //Input an integer, return all prime factors
+void prntPrm(Primes*, int*); //Output all prime factors
+bool validNumber7(string);
 //EXERCISE 7
 
 //EXERCISE 3
@@ -111,7 +127,7 @@ void main3();
 //EXERCISE 3
 
 //MASTER - MAIN
-int main()
+int main(int argc, char** argv)
 {
     int position = -1;
     bool result = true;
@@ -121,73 +137,76 @@ int main()
 
     while (option1 < 9) {
 
-        //system("CLS");
+        cout << "\033c";
         option1 = mainMenu();
 
         switch (option1) {
 
         case 1:
+
             main1();
             cout << endl;
-            cout << "Please Wait...";
+            cout << "Please Wait..." << endl;
             Sleep(4000);
             break;
         case 2:
             main2();
             cout << endl;
-            cout << "Please Wait...";
+            cout << "Please Wait..." << endl;
             Sleep(4000);
             break;
         case 3:
-            
+
             main3();
             cout << endl;
-            cout << "Please Wait...";
+            cout << "Please Wait..." << endl;
             Sleep(4000);
             break;
         case 4:
 
             main4();
             cout << endl;
-            cout << "Please Wait...";
+            cout << "Please Wait..." << endl;
             Sleep(4000);
             break;
         case 5:
 
             main5();
             cout << endl;
-            cout << "Please Wait...";
+            cout << "Please Wait..." << endl;
             Sleep(4000);
             break;
         case 6:
-            
+
             main6();
             cout << endl;
-            cout << "Please Wait...";
+            cout << "Please Wait..." << endl;
             Sleep(4000);
             break;
         case 7:
 
             main7();
             cout << endl;
-            cout << "Please Wait...";
+            cout << "Please Wait..." << endl;
             Sleep(4000);
             break;
 
         case 8:
             option1 = 9;
             cout << endl;
-            cout << "Exiting Software, Bye Bye...";
+            cout << "Exiting Software, Bye Bye..." << endl;
             break;
 
         default:
             cout << endl;
-            cout << "Please Wait...";
+            cout << "Please Wait..." << endl;
             Sleep(4000);
             break;
         }
 
     }
+    
+    return 0;
 }
 
 //EXERCISE #2 - MAIN
@@ -219,6 +238,7 @@ void main2() {
 
     employeespay = new EmployeesPay[MAXSIZE];
     //system("CLS");
+    cout << "\033c";
     while (option < 3) {
 
         option = menuExercise2();
@@ -282,8 +302,11 @@ void main2() {
                 c1 = c1 + 1;
             }
             cout << endl;
-            //system("pause");
-            cout << "Opening Main Menu...";
+
+            cout << endl;
+            cout << "Press Enter to Continue...";
+            getchar();
+            cout << "Opening Main Menu..." << endl;
             Sleep(4000);
             break;
 
@@ -291,7 +314,7 @@ void main2() {
         else {
             option = 3;
             cout << endl;
-            cout << "Opening Main Menu...";
+            cout << "Opening Main Menu..." << endl;
             break;
         }
     }
@@ -300,11 +323,11 @@ void main2() {
 //EXERCISE #2
 void printPayStub(EmployeesPay employeespay[], int position, long c1, string one[], string ten[]) {
 
-    time_t rawtime;    
+    time_t rawtime;
     time(&rawtime);
-    time_t t;    
-    struct tm timeinfo;    
-    localtime_r(&rawtime, &timeinfo);    
+    time_t t;
+    struct tm timeinfo;
+    localtime_r(&rawtime, &timeinfo);
 
     float rate1 = employeespay[position].payRate;
     float rate2 = rate1 * 2;
@@ -327,7 +350,7 @@ void printPayStub(EmployeesPay employeespay[], int position, long c1, string one
         h1 = employeespay[position].hoursWorked;
         s1 = h1 * rate1;
         control = 1;
-   }
+    }
     else if (employeespay[position].hoursWorked > 40 && employeespay[position].hoursWorked <= 60) {
         h1 = 40;
         h2 = employeespay[position].hoursWorked - 40;
@@ -451,7 +474,7 @@ bool setPayRate(int position, string input) {
     try {
         value1 = stof(input);
         if (value1 < 0) {
-           result = false;
+            result = false;
         }
         else {
 
@@ -514,13 +537,13 @@ void main1() {
     int position = -1;
     bool result = true;
     int option1 = 0;
-   float balance = 0.00;
+    float balance = 0.00;
     vector<Customer> customer;
     int option2 = 0;
 
     while (option1 < 5) {
 
-        //system("CLS");
+        cout << "\033c";
         option1 = menuExercise1();
 
         switch (option1) {
@@ -528,7 +551,7 @@ void main1() {
         case 1:
             option1 = createCustomer(customer, position);
             cout << endl;
-            cout << "Please Wait...";
+            cout << "Please Wait..." << endl;
             Sleep(4000);
             break;
         case 2:
@@ -546,7 +569,7 @@ void main1() {
                 cout << "No Customer was Registered Yet..." << endl;
             }
             cout << endl;
-            cout << "Please Wait...";
+            cout << "Please Wait..." << endl;
             Sleep(4000);
             break;
         case 3:
@@ -558,19 +581,19 @@ void main1() {
                 cout << "No Customer was Registered Yet..." << endl;
             }
             cout << endl;
-            cout << "Please Wait...";
+            cout << "Please Wait..." << endl;
             Sleep(6000);
             break;
 
         case 4:
             option1 = 5;
             cout << endl;
-            cout << "Opening Main Menu...";
+            cout << "Opening Main Menu..." << endl;
             break;
 
         default:
             cout << endl;
-            cout << "Please Wait...";
+            cout << "Please Wait..." << endl;
             Sleep(4000);
             break;
         }
@@ -978,7 +1001,7 @@ void main4() {
     int x = 0;
     int encryptedN = 0;
 
-    //system("CLS");
+    cout << "\033c";
     while (option < 3) {
 
         option = menuExercise4();
@@ -1025,7 +1048,7 @@ void main4() {
                     for (char& c : char2) {
                         s3 << c;
                         s3 >> swap[x];
-                       s3.str("");
+                        s3.str("");
                         s3.clear();
                         s3.seekg(0);
                         x++;
@@ -1049,7 +1072,8 @@ void main4() {
             }
 
             cout << endl;
-            //system("pause");
+            cout << "Press Enter to Continue...";
+            getchar();
             cout << endl;
             cout << "Opening Main Menu...";
             break;
@@ -1119,7 +1143,8 @@ void main4() {
             }
 
             cout << endl;
-            //system("pause");
+            cout << "Press Enter to Continue...";
+            getchar();            
             cout << endl;
             cout << "Opening Main Menu...";
             break;
@@ -1217,7 +1242,7 @@ bool validNumber(string number) {
         value1 = stoi(number);
         if (value1 < 0 || value1 > 7) {
             cout << endl;
-            cout << "Wrong Number entered... Please, try Again...";
+            cout << "Wrong Number entered... Please, try Again..." << endl;
             result = false;
         }
         else {
@@ -1226,7 +1251,7 @@ bool validNumber(string number) {
     }
     catch (exception e) {
         cout << endl;
-        cout << "Wrong Number entered... Please, try Again...";
+        cout << "Wrong Number entered... Please, try Again..." << endl;
         result = false;
     }
 
@@ -1296,8 +1321,8 @@ void main5() {
 
     int number;
     int option = 0;
-
-    //system("CLS");
+    
+    cout << "\033c";
     while (option < 3) {
 
         option = menuExercise5();
@@ -1325,8 +1350,8 @@ void main5() {
             cout << "long double\t\t\t12\t\t2.22507e-308 to 1.79769e+308\t\t\t\t\t170" << endl;
             cout << "***************************************************************************************************************************" << endl;
             cout << endl;
-            //system("pause");
-
+            cout << "Press Enter to Continue...";
+            getchar();
             cout << endl;
             cout << "Opening Main Menu...";
             break;
@@ -1389,8 +1414,8 @@ void main6() {
 
     int number;
     int option = 0;
-
-    //system("CLS");
+    
+    cout << "\033c";
     while (option < 3) {
 
         option = menuExercise6();
@@ -1452,7 +1477,8 @@ void main6() {
             cout << "************************************************************" << endl;
 
             cout << endl;
-            //system("pause");
+            cout << "Press Enter to Continue...";
+            getchar();
 
             cout << endl;
             cout << "Opening Main Menu...";
@@ -1512,14 +1538,15 @@ int menuExercise6() {
 }
 
 //*************************************************************************************************************
-//Exercise #3--------------I PUT ALL HERE LIKE 1 MORE PROGRAM. I SAVED A SEPARE PROGRAM FOR THIS TOO AS REFERENCE
+//Exercise #3
 
 //Execution begins here
-void main3(){
+void main3() {
     //Declare variables
     int arySize;//Array Size
     int modNum; //Number to control the modes (digits 0 to 9 allowed)
     Array* array;
+    string press;
 
     //Input the size and mod number
     cout << "This program develops an array to be analyzed" << endl;
@@ -1553,7 +1580,14 @@ void main3(){
 
     //Exit stage right 
     //system("pause");
-    cout << "Opening Main Menu...";
+    cout << endl;
+    cout << "Press Enter to Continue...";
+    cin.ignore();
+    cin.clear();
+    cin.sync();
+    getline(cin, press);
+    cout<<endl;
+    cout << "Opening Main Menu..." << endl;
     Sleep(4000);
 }
 
@@ -1641,10 +1675,10 @@ Stats* stat(const Array* array) {
     stats->mode = new Array;
     int sum = 0;
     float mean = 0.00;
-    
+
     //MEAN
     for (int x = 0; x < array->size; x++) {
-        sum = sum + array->data[x];                     
+        sum = sum + array->data[x];
     }
     mean = sum / (float)array->size;
     stats->avg = mean;
@@ -1657,7 +1691,6 @@ Stats* stat(const Array* array) {
     else {
         median = (float)(array->data[(array->size - 1) / 2] + array->data[array->size / 2]) / 2.0;
     }
-
 
     //MODE
     int** maxf = nullptr;
@@ -1759,9 +1792,9 @@ Stats* stat(const Array* array) {
     if (nModes != 0)stats->mode->data = new int[nModes];
     stats->modFreq = freq;
     stats->median = median;
-    
+
     for (int zz3 = 2; zz3 < nmodes + 2; zz3++) {
-        stats->mode->data[zz3-2] = modeAry[zz3];
+        stats->mode->data[zz3 - 2] = modeAry[zz3];
     }
 
     return stats;
@@ -1771,15 +1804,192 @@ Stats* stat(const Array* array) {
     for (int z4 = 0; z4 < array->size; z4++) {
         delete[]maxf[z4];
     }
-    delete[]maxf;        
+    delete[]maxf;
+}
+//Exercise #3
+//*************************************************************************************************************
+
+//EXERCISE 7
+void main7() {
+    int number;
+    int option = 0;
+    int size = 0;
+    bool control = false;
+    string read;
+    int value1 = 0;
+    
+    Prime numsPrime[999];
+    Primes primeTFind = {0};    
+
+    primeTFind.prime = numsPrime;    
+
+    cout << "\033c";
+    while (option < 3) {
+
+        option = menuExercise7();
+
+        if (option == 1) {            
+            
+            while (control == false) {
+                cout << endl;
+                cout << "Insert Number to Find the Prime Factors [Min 2 , Max 65000]: ";
+                getline(cin, read);
+                if (read.length() > 5) {
+                    cout << "Max Value Allowed if 65000... Please, Try Again..." << endl;
+                    control = validNumber7("a");
+                }
+                control = validNumber7(read);
+            }
+            
+            value1 = stoi(read);
+
+            primeTFind = factor(value1, &size);
+
+            prntPrm(&primeTFind, &size);
+
+            cout << endl;
+            cout << "Press Enter to Continue...";
+            getchar();
+
+            cout << endl;
+            cout << "Opening Main Menu...";
+            break;
+        }
+        else {
+            option = 3;
+            cout << endl;
+            cout << "Opening Main Menu...";
+            break;
+        }
+    }
 }
 
 //EXERCISE 7
-void main7(){
-    cout<<endl;
-    cout<< "Unfortunately, I didn't have enough time to do this Exercise... Sorry About That..."<<endl;
-    //system("pause");
-    cout << "Opening Main Menu...";
-    Sleep(4000);
+int menuExercise7() {
+    string optionS;
+    int optionN = 0;
+    stringstream ss;
+    int x = 0;
+
+    cout << "**************************************************" << endl;
+    cout << "*        ---   Midterm: Exercise 7   ---         *" << endl;
+    cout << "*         Developed by Domenico Venuti           *" << endl;
+    cout << "**************************************************" << endl;
+    cout << "* Choose from Menu: *" << endl;
+    cout << "*********************" << endl;
+    cout << endl;
+    cout << "1.- Find Prime Factors for a Number between 2 and 65000." << endl;
+    cout << "2.- Main Menu." << endl;
+    cout << endl;
+    cout << "**************************************************" << endl;
+    while (x == 0) {
+        try {
+            cout << ">> ";
+            getline(cin, optionS);
+            ss << optionS;
+            ss >> optionN;
+
+            ss.str("");
+            ss.clear();
+            ss.seekg(0);
+
+            if (optionN > 0 && optionN < 3) {
+                x = 1;
+            }
+            else {
+                cout << "Wrong Option, please, try again..." << endl;
+            }
+        }
+        catch (exception e) {
+            cout << "Wrong Option, please, try again..." << endl;
+        }
+    }
+
+    return optionN;
+}
+
+//EXERCISE 7
+Primes factor(int n, int *size)
+{
+    int x = 0;
+    int count = 0;
+
+    Prime numsPrime[999];    
+    Primes prime = { n };
+
+    prime.prime = numsPrime;
+        
+    while (n % 2 == 0)
+    {
+        count++;    
+        n = n / 2;
+    }
+
+    if (count > 0) {
+        prime.prime[x].prime = 2;
+        prime.prime[x].power = count;        
+        x++;
+    }
+        
+    count = 0;    
+    for (int i = 3; i <= sqrt(n); i = i + 2)
+    {        
+        while (n % i == 0)
+        {   
+            
+            count++;     
+            n = n / i;
+        }
+        if (count > 0) {
+            prime.prime[x].prime = i;
+            prime.prime[x].power = count;
+            x++;
+        }
+        count = 0;
+    }    
+    count = 0;    
+    if (n > 2) {
+        prime.prime[x].prime = n;
+        prime.prime[x].power = 1;
+        x++;        
+    }    
+    
+    *size = x;
+
+    return prime;
+}
+
+//EXERCISE 7
+void prntPrm(Primes* primeTFind, int *size) {    
+    cout << endl;
+    cout << "Prime Factors for Number " << primeTFind->nPrimes << " Are:" << endl;
+    cout << endl;
+    for (int x = 0; x < *size; x++) {
+        cout << primeTFind->prime[x].prime << "^" << primeTFind->prime[x].power;
+        if (x < *size - 1) {
+            cout<< " * ";
+        }
+    }
+}
+
+//EXERCISE 7
+bool validNumber7(string number) {
+    bool result = true;
+    int value1 = 0;
+
+    try {
+        value1 = stoi(number);
+        if (value1 < 2 || value1 > 65000) {
+            cout << "Min Value Allowed is 2 and Max Value Allowed is 65000... Please, try Again..." << endl;
+            result = false;
+        }
+    }
+    catch (exception e) {
+        cout << endl;
+        cout << "Wrong Number entered... Please, try Again..." << endl;
+        result = false;
+    }
+
+    return result;
 }
 //EXERCISE 7
