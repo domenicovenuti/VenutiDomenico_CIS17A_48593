@@ -1,12 +1,16 @@
 using namespace std;
 
 //CLASS
+/// Derived Class from Base.
+/// This Class Share the same Members as Base
+/// @param getTextMenu() Overrided Member Function to show the Game Type Menu
+/// @see Base
 class Derived:public Base {
 public:	//PUBLIC
 	Derived() {	//CONSTRUCTOR
 		boardsize = 0;
 	}
-	//UPDATED VIRTUAL FUNCTION
+	//UPDATED VIRTUAL FUNCTION AND POLYMORPHISM
 	void getTextMenu() {
 		cout << endl;
 		cout << "\t--------------------------------------------------------------------------------------------" << endl;

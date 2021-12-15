@@ -5,6 +5,13 @@
 using namespace std;
 
 //CLASS
+/// Basic Parameters of the Game.
+/// This Class Define the Basic Parameters of the Game.
+/// @param tGamesPlayed Number of Games Played in Current Session
+/// @param boardsize Current Board Size
+/// @param getTextMenu() Main Menu
+/// @attention This class Include a Virtual Member Function as Polymorph that is Overrided in Derived
+/// @see Derived
 class Base {
 private:	//PRIVATE
 	int tGamesPlayed;

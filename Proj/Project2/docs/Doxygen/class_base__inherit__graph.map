@@ -1,0 +1,4 @@
+<map id="Base" name="Base">
+<area shape="rect" id="node1" title="Basic Parameters of the Game." alt="" coords="5,5,152,156"/>
+<area shape="rect" id="node2" href="$class_derived.html" title="Derived Class from Base." alt="" coords="20,204,137,296"/>
+</map>

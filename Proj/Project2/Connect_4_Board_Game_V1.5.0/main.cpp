@@ -75,7 +75,7 @@ int main(int argc, char** argv)
 	int gamesp = 0;
 	Base baseh;	//Base Class
 	Derived derivedh; //Derived Class from Base
-	Grid grid(7,9);
+	Grid grid(7,9); //INSTANCE OF CLASS Grid
 	string* players;
 	float score = 0.00;
 	int rows = 6;
@@ -1032,7 +1032,7 @@ void overloadOperators(Base baseh, Derived derivedh) {
 	cout << endl;
 	cout << "\t\tThe Current Total Points Won by All Players Are Equal to : " << ptp.getScore1() << " Points." << endl;
 	cout << "\t\tThe Difference in Points Between All Players Are Equal to : " << ptm.getScore1() << " Points." << endl;
-	cout << "\t\tPorcentage that Each Player Won from Total Point is Equal to : " << endl << "\t\tPLAYER 1: " << player1.getPlayer1n() << " = " << ptd.getP1() << "%" << "\t" << "PLAYER 2: " << player2.getPlayer1n() << " = " << ptd.getP2() << "%" << endl << endl;
+	cout << "\t\tPercentage that Each Player Won from Total Point is Equal to : " << endl << "\t\tPLAYER 1: " << player1.getPlayer1n() << " = " << ptd.getP1() << "%" << "\t" << "PLAYER 2: " << player2.getPlayer1n() << " = " << ptd.getP2() << "%" << endl << endl;
 	cout << "\t--------------------------------------------------------------------------------------------" << endl;
 	cout << "\t\tGames Played: " << baseh.gettGamesPlayes() << "\t\t--- " << "Maximum Positions Allowed in Last Game Played: " << derivedh.getBoardSize() << endl;
 	cout << "\t--------------------------------------------------------------------------------------------" << endl << endl;

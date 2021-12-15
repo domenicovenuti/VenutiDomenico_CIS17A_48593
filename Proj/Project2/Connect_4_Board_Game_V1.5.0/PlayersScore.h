@@ -4,6 +4,14 @@
 using namespace std;
 
 //CLASS
+/// Represent the Statistic of Current Games Played.
+/// This Class Define all Parameters for Current Games Played.
+/// @param player1 Player Name
+/// @param score1 Accumulated Points by Player
+/// @param p1 Player 1 - Percentage Won against Total Points Gained
+/// @param p2 Player 2 - Percentage Won against Total Points Gained
+/// @param winn Points Gain for each Win
+/// @attention This class Include 3 Overloaded Operators (+, -, /)
 class PlayersScore {
 private:	//PRIVATES
 	string player1;

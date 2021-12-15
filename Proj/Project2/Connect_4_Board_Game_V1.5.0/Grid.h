@@ -4,8 +4,16 @@
 const int MAX_SIZE = 63;
 
 //CLASS
+/// Board Game.
+/// This Class Define the Board Game as an Array of Positions
+/// @param rows Number of Rows in the Current Game
+/// @param cols Number of Columns in the Current Game  
+/// @param position Array of Class Position
+/// @see Position
+/// @attention This class Include a friend class gridsFriend()
+/// @attention This class have 2 Constructors and a Destructor, the code can be found in Grid.cpp
 class Grid {
-private:	//PRIVATE
+private:	//PRIVATE MEMBER
 	int rows;
 	int cols;
 	Position* position;	//AGGREGATION AND OBJECT ARRAY	

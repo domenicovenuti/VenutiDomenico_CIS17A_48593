@@ -3,6 +3,11 @@
 #define READFKEYBOARD_H
 
 //TEMPLATE CLASS
+/// Class to Read and Filter Data from Keyboard.
+/// This Class use a Template to Read any Data Type and Filter only the one that is Needed depending of what the Program is expecting.
+/// @param data1 Data if the Data type is string
+/// @param data2 Data if teh Data type is int
+/// @param ThrowExceptionDouble() Exception Execute when the Data type Expected is different from the read from Keyboard.
 template <class T>
 class ReadFromKeyboard {
 private:

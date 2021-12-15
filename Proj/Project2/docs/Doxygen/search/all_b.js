@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['setboardsize_0',['setBoardSize',['../class_base.html#a325ba1711ea704377eca6bbdc1809ac0',1,'Base']]],
+  ['setcols_1',['setCols',['../class_grid.html#add5e3550ba695a2124bb4dbcad3789c7',1,'Grid']]],
+  ['setdouble_2',['setDouble',['../class_read_from_keyboard.html#a5469a5dc193b5df90ffb3d5ec6629840',1,'ReadFromKeyboard']]],
+  ['setint_3',['setInt',['../class_read_from_keyboard.html#a64c1b58df3dbbbbbad0a2348b529e97a',1,'ReadFromKeyboard']]],
+  ['setp1_4',['setP1',['../class_players_score.html#a43a69f5b86d23a84528635e5a035bb4f',1,'PlayersScore']]],
+  ['setp2_5',['setP2',['../class_players_score.html#aec71190581505741c3d6cc93c6b9b1d5',1,'PlayersScore']]],
+  ['setplayer1n_6',['setPlayer1n',['../class_players_score.html#a2f063b1693ed91a4050a5542d4c96d53',1,'PlayersScore']]],
+  ['setpositionsnew_7',['setPositionsNew',['../class_grid.html#aca195e84b5e33e41603931fe15452d6b',1,'Grid']]],
+  ['setpositionvalue_8',['setPositionValue',['../class_grid.html#a919da7669a59db10651cd0267a31820e',1,'Grid']]],
+  ['setpositionx_9',['setPositionX',['../class_grid.html#abbed297bc9129c339dbc5813923e25bb',1,'Grid']]],
+  ['setpositiony_10',['setPositionY',['../class_grid.html#ace6bd48c97fa2c8c1e9c7c72219b8ebb',1,'Grid']]],
+  ['setrows_11',['setRows',['../class_grid.html#a02c6facf4d6c74d3e0a8b6554e108baa',1,'Grid']]],
+  ['setscore1_12',['setScore1',['../class_players_score.html#a60f2dddc5c8963e8749eaec34ec70707',1,'PlayersScore']]],
+  ['setstring_13',['setString',['../class_read_from_keyboard.html#afb9c71b12bbf37d1f156901e392e3ebe',1,'ReadFromKeyboard']]],
+  ['settgamesplayed_14',['settGamesPlayed',['../class_base.html#ae8f87e0532eade15e846bde9da87ff72',1,'Base']]],
+  ['setvalue_15',['setValue',['../class_position.html#adef2e677840a9b7f457887ca7d4c6836',1,'Position']]],
+  ['setx_16',['setX',['../class_position.html#a3668a9bf0bc2b7be11cf57d1ea39af0c',1,'Position']]],
+  ['sety_17',['setY',['../class_position.html#ae4bdefa8d403050f81aecb1b1a856852',1,'Position']]],
+  ['showscores_18',['showScores',['../main_8cpp.html#a5da34b1d747f26dab8795ccebb1b4798',1,'main.cpp']]],
+  ['someonewon_19',['someoneWon',['../main_8cpp.html#a4d2c9523ac6587918228de1d05d7969c',1,'main.cpp']]]
+];
